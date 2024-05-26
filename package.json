@@ -8,10 +8,12 @@
     "start": "parcel",
     "build": "parcel build",
     "check": "tsc --noEmit",
-	"clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist"
   },
   "devDependencies": {
+    "@parcel/validator-typescript": "^2.12.0",
     "parcel": "latest",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "typescript": "^5.4.5"
   }
 }

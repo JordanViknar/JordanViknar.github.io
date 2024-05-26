@@ -5,6 +5,5 @@
     	"jsxImportSource": "preact",
 		"target": "es2021",
 		"strict": true  
-	},
-	"include": ["src/**/*"]
-  }
+	}
+}
