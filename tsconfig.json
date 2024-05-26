@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"isolatedModules": true,
+		"experimentalDecorators": true,
+    	"jsxImportSource": "preact",
+		"target": "es2021",
+		"strict": true  
+	},
+	"include": ["src/**/*"]
+  }

@@ -1,0 +1,17 @@
+{
+  "name": "jordanviknar-website",
+  "source": "src/index.html",
+  "homepage": "https://github.com/JordanViknar/JordanViknar.github.io",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "private": true,
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "check": "tsc --noEmit",
+	"clean": "rm -rf ./dist"
+  },
+  "devDependencies": {
+    "parcel": "latest",
+    "sharp": "^0.31.3"
+  }
+}
