@@ -25,6 +25,8 @@
 body {
 	margin: 0;
 	font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+	background: url('../svg/wave.svg') no-repeat center center fixed;
+	background-size: cover;
 }
 
 /* ------------------ Taskbar ------------------ */

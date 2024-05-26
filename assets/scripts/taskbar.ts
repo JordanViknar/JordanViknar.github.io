@@ -7,7 +7,6 @@ function retrieve_element(id: string) {
 		return element;
 	}
 }
-
 const taskbar_status_time = retrieve_element('taskbar-status-time');
 
 // Update the text every second to be the current time
