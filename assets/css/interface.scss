@@ -1,0 +1,190 @@
+/* Variables */
+$taskbar-colors: (
+	#245EDC,
+	#3f8cf3,
+	#245EDC,
+	#245EDC,
+	#1941A5
+);
+
+$start-button-colors: (
+	default: (
+		#407839,
+		#8dbb8c,
+		#369239,
+		#3daa3b,
+		#2e7044
+	),
+	hover: (
+		#388b54,
+		#8dbb8c,
+		#4ed753,
+		#3daa3b,
+		#388b54
+	),
+	selected: (
+		#1c4529,
+		#6b8f6b,
+		#2a762d,
+		#236222,
+		#1c4529
+	)
+);
+
+$taskbar-status-colors: (
+	#1a95e6,
+	#25b0fe,
+	#1a95e6,
+	#0fa9eb,
+	#015ab6
+);
+
+/* Mixin for gradient backgrounds */
+@mixin gradient-bg($colors) {
+	background: linear-gradient(
+		to bottom,
+		nth($colors, 1) 0%,
+		nth($colors, 2) 9%,
+		nth($colors, 3) 18%,
+		nth($colors, 4) 92%,
+		nth($colors, 5) 100%
+	) center/cover no-repeat;
+}
+
+/* Variables */
+:root {
+	--taskbar-1: map-get($taskbar-colors, 1);
+	--taskbar-2: map-get($taskbar-colors, 2);
+	--taskbar-3: map-get($taskbar-colors, 3);
+	--taskbar-4: map-get($taskbar-colors, 4);
+	--taskbar-5: map-get($taskbar-colors, 5);
+}
+
+body {
+	margin: 0;
+	font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+	background: url('../svg/wave.svg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+/* ------------------ Taskbar ------------------ */
+/* Positioning */
+#taskbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Colors */
+#taskbar {
+	@include gradient-bg($taskbar-colors);
+	color: white;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Technical */
+#taskbar {
+	user-select: none;
+}
+
+/* ------------------ Start button ------------------ */
+/* Positioning */
+#start-button {
+	height: 100%;
+	float: left;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 25px;
+	
+	img {
+		height: 1.2em;
+		filter: drop-shadow(1px 1px 1px #222);
+	}
+
+	span {
+		font-size: 1.05em;
+		font-style: italic;
+		font-weight: bold;
+		text-shadow: 0 5px 12px rgba(0, 0, 0, 0.7); /* Add text shadow */
+	}	
+}
+/* Style */
+#start-button {
+	@include gradient-bg(map-get($start-button-colors, default));
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+	border-radius: 0 10px 10px 0;
+	outline: rgba(255, 255, 255, 0.1) 1px solid;
+}
+
+#start-button:hover {
+	@include gradient-bg(map-get($start-button-colors, hover));
+
+	img {
+		animation: bounce 1s ease-in-out 0s infinite;
+	}
+}
+@keyframes bounce {
+	from {
+		translate: 0 0;
+	}
+
+	25% {
+		translate: 0 0.1em;
+	}
+
+	50% {
+		translate: 0 -0.1em;
+	}
+
+	75% {
+		translate: 0 0.1em;
+	}
+
+	100% {
+		translate: 0 0;
+	}
+}
+
+#start-button:active {
+	@include gradient-bg(map-get($start-button-colors, selected));
+}
+
+/* Technical */
+#start-button {
+	cursor: pointer;
+}
+
+/* ------------------ Taskbar status area ------------------ */
+/* Positioning */
+#taskbar-status {
+	height: 100%;
+	float: right;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	box-sizing: border-box;
+
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 25px;
+}
+
+/* Style */
+#taskbar-status {
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 500;
+	letter-spacing: -0.04em;
+	font-size: 0.91em;
+	@include gradient-bg($taskbar-status-colors);
+	box-shadow: inset 0 0 4px #0000007d;
+	outline: rgba(255, 255, 255, 0.1) 1px solid;
+}
