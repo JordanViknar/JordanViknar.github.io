@@ -13,6 +13,18 @@
 	--start-button-3: #369239;
 	--start-button-4: #3daa3b;
 	--start-button-5: #2e7044;
+	/* Start button hover */
+	--start-button-hover-1: #388b54;
+	--start-button-hover-2: #8dbb8c;
+	--start-button-hover-3: #4ed753;
+	--start-button-hover-4: #3daa3b;
+	--start-button-hover-5: #388b54;
+	/* Start button selected */
+	--start-button-selected-1: #1c4529;
+	--start-button-selected-2: #6b8f6b;
+	--start-button-selected-3: #2a762d;
+	--start-button-selected-4: #236222;
+	--start-button-selected-5: #1c4529;
 
 	/* Taskbar status area */
 	--taskbar-status-1: #1a95e6;
@@ -84,20 +96,46 @@ body {
 	background: linear-gradient(to bottom, var(--start-button-1) 0%, var(--start-button-2) 9%, var(--start-button-3) 18%, var(--start-button-4) 92%, var(--start-button-5) 100%) center/cover no-repeat;
 	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
 	border-radius: 0 10px 10px 0;
-	border:rgba(255, 255, 255, 0.1) 1px solid;
+	outline:rgba(255, 255, 255, 0.1) 1px solid;
 }
 
 #start-button:hover {
-
+	background: linear-gradient(to bottom, var(--start-button-hover-1) 0%, var(--start-button-hover-2) 9%, var(--start-button-hover-3) 18%, var(--start-button-hover-4) 92%, var(--start-button-hover-5) 100%) center/cover no-repeat;;
 }
 
 #start-button:active {
-
+	background: linear-gradient(to bottom, var(--start-button-selected-1) 0%, var(--start-button-selected-2) 9%, var(--start-button-selected-3) 18%, var(--start-button-selected-4) 92%, var(--start-button-selected-5) 100%) center/cover no-repeat;;
 }
 
 /* Technical */
 #start-button {
 	cursor: pointer;
+}
+
+#start-button img:hover {
+	animation: bounce 1s ease-in-out 0s infinite;
+}
+
+@keyframes bounce {
+	from {
+		translate: 0 0;
+	}
+
+	25% {
+		translate: 0 0.1em
+	}
+
+	50% {
+		translate: 0 -0.1em;
+	}
+
+	75% {
+		translate: 0 0.1em;
+	}
+
+	100% {
+		translate: 0 0;
+	}
 }
 
 /* ------------------ Taskbar status area ------------------ */
