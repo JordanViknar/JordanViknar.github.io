@@ -1,10 +1,10 @@
 /* Variables */
 $taskbar-colors: (
-	#245EDC,
-	#3f8cf3,
-	#245EDC,
-	#245EDC,
-	#1442b2
+	#294ca8,
+	#3b86e5,
+	#2259d5,
+	#2562df,
+	#1941a5
 );
 
 $start-button-colors: (
@@ -32,20 +32,20 @@ $start-button-colors: (
 );
 
 $taskbar-status-colors: (
-	#1a95e6,
-	#25b0fe,
-	#1a95e6,
-	#0fa9eb,
-	#015ab6
+	#1296e4,
+	#16acef,
+	#1290e8,
+	#0d9ff0,
+	#1185df
 );
 
 /* Mixin for gradient backgrounds */
 @mixin gradient-bg($colors) {
 	background: linear-gradient(
 		to bottom,
-		nth($colors, 1) 0%,
-		nth($colors, 2) 9%,
-		nth($colors, 3) 18%,
+		nth($colors, 1) 2%,
+		nth($colors, 2) 7%,
+		nth($colors, 3) 20%,
 		nth($colors, 4) 83%,
 		nth($colors, 5) 100%
 	) center/cover no-repeat;
@@ -80,6 +80,7 @@ body {
 		#desktop-footer-zone {
 			width: 100%;
 			height: 100%;
+			z-index: -9999;
 
 			display: flex;
 			justify-content: flex-end;
@@ -123,11 +124,11 @@ body {
 			gap: 10px;
 
 			padding: 5px;
-			padding-left: 15px;
+			padding-left: 10px;
 			padding-right: 25px;
 
 			@include gradient-bg(map-get($start-button-colors, default));
-			box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+			box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
 			border-radius: 0 10px 10px 0;
 			outline: rgba(255, 255, 255, 0.1) 1px solid;
 
@@ -193,21 +194,21 @@ body {
 			padding-right: 25px;
 
 			@include gradient-bg($taskbar-status-colors);
-			box-shadow: inset 0 0 4px #0000007d;
-			outline: rgba(255, 255, 255, 0.1) 1px solid;
+			box-shadow: rgb(24, 187, 255) 1px 0px 1px inset;
+			border-left: 1px solid rgb(16, 66, 175);
+
+			font-size: 0.78em;
 
 
 			#taskbar-status-icons {
 				display: flex;
 				margin-right: 5px;
 
-				font-size: 0.83em;
-
 				a {
 					display: flex;
 
 					img {
-						max-height: 1.2em;
+						max-height: 1.35em;
 						object-fit: contain;
 					}
 				}
@@ -221,9 +222,9 @@ body {
 }
 
 .simple-text {
-	font-family: 'Courier New', Courier, monospace;
-	font-weight: 500;
-	letter-spacing: -0.04em;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 100;
+	letter-spacing: -0.06em;
 	font-size: 0.83em;
 }
 
@@ -232,5 +233,5 @@ body {
 }
 
 .shadow-text {
-	text-shadow: black 1px 1px 1px;
+	text-shadow: rgba(0, 0, 0, 0.9) 1px 1px 1px;
 }
