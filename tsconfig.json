@@ -3,7 +3,8 @@
 		"isolatedModules": true,
 		"experimentalDecorators": true,
     	"jsxImportSource": "preact",
-		"target": "es2021",
+		"target": "esnext",
+		"module": "esnext",
 		"strict": true  
 	}
 }
